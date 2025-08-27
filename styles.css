@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+/* === Part 1: CSS Animations & Transitions === */
+.animated-btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  background: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.animated-btn:hover {
+  background: #3700b3;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.pulse-box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 20px auto;
+  border-radius: 10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* === Part 3: Combining CSS + JS === */
+.box {
+  width: 100px;
+  height: 100px;
+  background: teal;
+  margin: 20px auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.box.animate {
+  transform: translateY(-50px) rotate(45deg);
+  background: orange;
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  transform: translateY(-50px);
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}
